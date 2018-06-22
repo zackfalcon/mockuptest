@@ -1,0 +1,102 @@
+@import '~antd/lib/style/themes/default.less';
+@ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+.logo {
+  height: 64px;
+  position: relative;
+  line-height: 64px;
+  padding-left: (@menu-collapsed-width - 32px) / 2;
+  transition: all 0.3s;
+  
+  background: white;
+  overflow: hidden;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+  }
+  h1 {
+    color: white;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    margin: 0 0 0 12px;
+    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+}
+
+.iconBold {
+  font-weight: bold;
+}
+
+.logo_text {
+  margin-left: 2%;
+}
+
+
+
+.sider {
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  &.ligth {
+    background-color: white;
+    .logo {
+      background: white;
+      h1 {
+        color: white;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 14px;
+  margin-right: 10px;
+}
+
+:global {
+  .drawer .drawer-content {
+    background: white;
+  }
+  .ant-layout-sider-children {
+    background: white;
+  }
+  .ant-layout-sider {
+    background: white;
+  }
+  .ant-menu-inline-collapsed {
+    & > .ant-menu-item .sider-menu-item-img + span,
+    &
+      > .ant-menu-item-group
+      > .ant-menu-item-group-list
+      > .ant-menu-item
+      .sider-menu-item-img
+      + span,
+    & > .ant-menu-submenu > .ant-menu-submenu-title .sider-menu-item-img + span {
+      max-width: 0;
+      display: inline-block;
+      opacity: 0;
+    }
+  }
+  .ant-menu-item .sider-menu-item-img + span,
+  .ant-menu-submenu-title .sider-menu-item-img + span {
+    transition: opacity 0.3s @ease-in-out, width 0.3s @ease-in-out;
+    opacity: 1;
+  }
+
+.ant-menu-vertical 
+.ant-menu-item:after, 
+.ant-menu-vertical-left 
+.ant-menu-item:after, .ant-menu-vertical-right 
+.ant-menu-item:after, .ant-menu-inline .ant-menu-item:after {
+  border-right: 3px solid #007fc9;
+}
+
+  .ant-menu-item-selected > a, .ant-menu-item-selected > a:hover {
+    color: #007fc9;
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #007fc91f;
+  }
+}
